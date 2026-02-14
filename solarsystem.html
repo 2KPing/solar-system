@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Minimal Solar System</title>
+
+<style>
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #0b132b, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* System container */
+.system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+/* Sun */
+.sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #fff6b7, #ffb703);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 40px rgba(255, 200, 50, 0.8);
+}
+
+/* Orbit rings */
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Individual orbits */
+.orbit.one { width: 120px; height: 120px; animation: spin 6s linear infinite; }
+.orbit.two { width: 200px; height: 200px; animation: spin 10s linear infinite; }
+.orbit.three { width: 300px; height: 300px; animation: spin 16s linear infinite; }
+
+/* Planets */
+.planet {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+/* Planet styles */
+.planet.one {
+    width: 8px;
+    height: 8px;
+    background: #4cc9f0;
+    box-shadow: 0 0 10px #4cc9f0;
+}
+
+.planet.two {
+    width: 10px;
+    height: 10px;
+    background: #b5179e;
+    box-shadow: 0 0 12px #b5179e;
+}
+
+.planet.three {
+    width: 12px;
+    height: 12px;
+    background: #fca311;
+    box-shadow: 0 0 14px #fca311;
+}
+
+/* Animation */
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+    <div class="system">
+        <div class="sun"></div>
+
+        <div class="orbit one">
+            <div class="planet one"></div>
+        </div>
+
+        <div class="orbit two">
+            <div class="planet two"></div>
+        </div>
+
+        <div class="orbit three">
+            <div class="planet three"></div>
+        </div>
+    </div>
+</body>
+</html>
